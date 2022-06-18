@@ -45,7 +45,7 @@ if __name__ == '__main__':
     parser.add_argument("--epsilon_topo", type=float, default=1, help="Privacy budget of topology privacy-preserving.")
     parser.add_argument("--batchsize", type=int, default=2048, help="Number of batchsize.")
     parser.add_argument('--task', choices=['lp', 'nc'], default='lp', help='Training task.')
-    parser.add_argument('--dataset', '-d', type=str, choices=['acm', 'dblp', 'imdb', 'amazon'], default='acm', help='Dataset to use.')
+    parser.add_argument('--dataset', '-d', type=str, choices=['acm', 'dblp', 'imdb', 'amazon'], default='imdb', help='Dataset to use.')
     parser.add_argument("--dropout_feat", type=float, default=0.8, help="Dropout probability of feature privacy-preserving.")
     parser.add_argument("--weight_decay_feat", type=float, default=0.001, help="Regularization coefficients of feature privacy-preserving.")
     parser.add_argument('--gpu_id', type=int, default=0, help='GPU id to use.')
