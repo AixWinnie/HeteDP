@@ -1,10 +1,3 @@
-r"""
-Implements privacy accounting for Gaussian Differential Privacy.
-Applies the Dual and Central Limit Theorem (CLT) to estimate privacy budget of
-an iterated subsampled Gaussian Mechanism (by either uniform or Poisson
-subsampling).
-"""
-
 import numpy as np
 from scipy import optimize
 from scipy.stats import norm
