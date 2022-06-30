@@ -102,7 +102,6 @@ def topologylearning(g, args, data):
 
             optimizer.step()
 
-        #计算val_auc
         val_roc = evaluate(tdp_model, val_loader, etype, device)
         pltLoss.append(sum(losses) / len(losses))
         print('Epoch {:d} | Loss {:.4f} | Valid roc: {:.4f} '.
