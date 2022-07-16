@@ -102,6 +102,7 @@ def topologylearning(g, args, data):
 
             optimizer.step()
 
+        topodp_args.grad_norm_max *= topodp_args.C_decay
         val_roc = evaluate(tdp_model, val_loader, etype, device)
         pltLoss.append(sum(losses) / len(losses))
         print('Epoch {:d} | Loss {:.4f} | Valid roc: {:.4f} '.
