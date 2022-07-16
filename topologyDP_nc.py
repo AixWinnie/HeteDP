@@ -87,6 +87,7 @@ def topologylearning(g, args, data):
             optimizer.step()
         pltLoss.append(sum(losses) / len(losses))
 
+        topodp_args.grad_norm_max *= topodp_args.C_decay
         val_mi, test_mi, val_ma, test_ma, feat = evaluate(tdp_model, g, features, category, labels, train_idx, val_idx, test_idx, args, device)
         print('Epoch {:d} | Loss {:.4f} | Valid mic: {:.4f} | Valid mac: {:.4f} | Test mic: {:.4f} | Test mac: {:.4f} '.
                 format(epoch, sum(losses) / len(losses), val_mi, val_ma, test_mi, test_ma))
