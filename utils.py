@@ -58,6 +58,7 @@ class dataset():
         self.batch_proc_size = args.batchsize
         self.grad_norm_max = 1
         self.epochs = args.epochs
+        self.C_decay = 0.95
         
     def forward(self, g):
         self.sample_rate = self.batch_proc_size / g.num_nodes()
