@@ -29,7 +29,6 @@ def clip_and_accumulate(args, model):
 
     for p, key in zip(filter(lambda p: p.requires_grad, model.parameters()), cum_grads.keys()):
         if p.grad is not None and key in g_norm.keys():
-            C = p.grad.mean()
             cum_grads[key] = F.normalize(torch.sum((p.grad / torch.clamp(g_norm[key].contiguous().view(-1, 1) / C, min=1)), dim=0),dim=0)
 
 def add_noise(args, model):
